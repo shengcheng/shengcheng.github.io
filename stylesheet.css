@@ -1,3 +1,4 @@
+/* Existing @font-face rules */
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
@@ -132,4 +133,148 @@ h2 {
 
 span.highlight {
   background-color: #ffffd0;
+}
+
+/* New: Flexbox-based Responsive Layout Styles */
+
+/* Container for the entire content */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Section */
+.header {
+  /* Changed from center to left alignment */
+  text-align: left; /* Modified */
+  margin-bottom: 40px;
+}
+
+.header .name {
+  /* Center the name */
+  text-align: center; /* New */
+  margin-bottom: 10px;
+}
+
+.header .links {
+  /* Center the links */
+  text-align: center; /* New */
+}
+
+.header .links a {
+  margin: 0 10px;
+  color: #1772d0; /* Matches existing a color */
+}
+
+.header .links a:hover {
+  color: #f09228; /* Matches existing a:hover color */
+}
+
+/* Introductory Paragraph */
+.header .intro {
+  text-align: left; /* New: Align to left */
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  /* Already defined in original CSS */
+  /* font-size: 22px; */
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Publications Section */
+.publications .publication {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+
+.publications .publication-image {
+  flex: 0 0 220px; /* Fixed width for images */
+  margin-right: 20px;
+}
+
+.publications .publication-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.publications .publication-content {
+  flex: 1;
+}
+
+/* Modified: Publication Title Color */
+.publications .papertitle {
+  font-size: 16px; /* Increased for better readability */
+  font-weight: 700; /* Already defined */
+  color: #1772d0; /* Modified: Changed from #333 to match link color */
+  text-decoration: none;
+}
+
+.publications .papertitle:hover {
+  text-decoration: underline;
+  color: #f09228; /* Optional: Match hover color */
+}
+
+/* Work Experience and Service & Honors Sections */
+.work-experience ul,
+.service-honor ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.work-experience li,
+.service-honor li {
+  margin-bottom: 10px;
+}
+
+.work-experience ul ul,
+.service-honor ul ul {
+  margin-top: 5px;
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+/* Footer Styling */
+.footer {
+  text-align: left;
+  font-size: 12px;
+  color: #666;
+}
+
+.footer a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .publications .publication {
+    flex-direction: column;
+  }
+
+  .publications .publication-image {
+    margin-right: 0;
+    margin-bottom: 15px;
+    flex: none;
+    width: 100%;
+  }
+
+  .publications .publication-image img {
+    width: 100%;
+    height: auto;
+  }
 }
